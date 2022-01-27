@@ -1,7 +1,3 @@
-from ast import Is
-from multiprocessing.spawn import prepare
-from pickle import TRUE
-
 
 def ConvertTomRNA(dna):
     mRNA = ""
@@ -129,7 +125,7 @@ def FixProtein(prePro):
     for i in range(0, len(prePro), 4):
         amino = prePro[i] + prePro[i + 1] + prePro[i + 2] + prePro[i + 3]
         if amino == "Met-":
-            foundStart = TRUE
+            foundStart = True
             continue
 
         if foundStart:
@@ -146,7 +142,7 @@ def main():
     protein = ConvertToProtein(mRNA)
     protein = FixProtein(protein)
 
-    print("\n\n\n\n"+protein+"\n\n")
+    print(protein)
 
 
 main()
